@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "Aspire",
+        "employes": 3800,
+        "ceo": "Gowri",
+        "rating": 4
+    },
+    {
+        "name": "startup",
+        "employes": 3,
+        "ceo": "na",
+        "rating": 3.6
+    } 
+]

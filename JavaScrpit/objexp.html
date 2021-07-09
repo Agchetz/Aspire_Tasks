@@ -1,0 +1,33 @@
+!<script>function Person(first, last, age, gender, interests) {
+    this.name = {
+      'first': first,
+      'last' : last
+    };
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+    this.bio = function() {
+
+      var string = this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. ';
+
+      var pronoun;
+
+      if(this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
+        pronoun = 'He likes ';
+      } else if(this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F') {
+        pronoun = 'She likes ';
+      } else {
+        pronoun = 'They like ';
+      }
+
+      string += pronoun;
+
+      alert(string);
+    };
+    this.greeting = function() {
+      alert('Hi! I\'m ' + this.name.first + '.');
+    };
+  };
+
+  let person1 = new Person('Tammi', 'Smith', 32, 'neutral', ['music', 'skiing', 'kickboxing']);
+</script>

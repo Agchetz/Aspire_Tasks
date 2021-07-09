@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --primary: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p style="color: var(--primary)">Hi</p>  
+    <!-- variables in CSS -->
+    <button id="button1">click</button>
+    <!-- <button id="button2">click</button> -->
+    <script>
+
+      //Async
+
+        // const btn = document.querySelector("button");
+        // btn.addEventListener("click", () => {
+        //   let myDate;
+        //   for (let i = 0; i < 10000000; i++) {
+        //     let date = new Date();
+        //     myDate = date;
+        //   }
+
+        //   console.log(myDate);
+
+        //   let pElem = document.createElement("p");
+        //   pElem.textContent = "This is a newly-added paragraph.";
+        //   document.body.appendChild(pElem);
+        // });
+
+        //asyn
+
+        // function expensiveOperation() {
+        //   for (let i = 0; i < 1000000; i++) {
+        //    console.log("asdas")
+        //   }
+        // }
+        // const fillBtn = document.querySelector("#button1");
+        // fillBtn.addEventListener("click", expensiveOperation);
+        // const alertBtn = document.querySelector("#button2");
+        // alertBtn.addEventListener("click", () => alert("You clicked me!"));
+
+      //Sync
+
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", () => {
+        alert("You clicked me!");
+
+        let pElem = document.createElement("p");
+        pElem.textContent = "This is a newly-added paragraph.";
+        document.body.appendChild(pElem);
+      });
+
+      //Other Example
+
+    //   console.log("Hai");
+    //   for (var i = 0; i < 100000; i++) {
+    //     data = i;
+    //   }
+    //   console.log(i);
+    //   console.log("end");
+
+
+    //   console.log("Hai");
+    //   setTimeout(function(){
+    //     console.log("intermediate");
+    //   }, 2000);
+    //   console.log("end");
+
+
+    </script>
+  </body>
+</html>
