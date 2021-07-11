@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="swiggy.css" />
+</head>
+<body >
+    <div class="outtercontainer" >
+        <form>
+          <div class="contain">
+            <div>
+              <button onclick="history.go(0)"  class="close">
+                <i
+                  class="fa fa-times fa-2x"
+                  aria-hidden="true"
+                  clickable="true"
+                ></i>
+              </button>
+            </div>
+            <div class="suone">
+              <div class="sua">
+                <h2>Sign up</h2>
+                <div>
+                  or <span class="loginacc">login to your account</span>
+                </div>
+              </div>
+              <div class="sub">
+                <img src="signuplogo.png" alt="image" class="logo" />
+              </div>
+            </div>
+            <div class="sutwo">
+              <div>
+                <input
+                  id="phoneNumber"
+                  class="inp"
+                  type="tel"
+                  name="Phone"
+                  placeholder="Phone number"
+                  onfocusout="validateNumber()"
+                />
+                <div class="error" id="errorNum"></div>
+              </div>
+              <div>
+                <input
+                  id="userName"
+                  class="inp"
+                  type="text"
+                  name="Name"
+                  placeholder="Name"
+                  onfocusout="validateName()"
+                />
+                <div class="error" id="errorName"></div>
+              </div>
+              <div>
+                <input
+                  id="emailId"
+                  class="inp"
+                  type="email"
+                  name="Email"
+                  placeholder="Email"
+                  onfocusout="validateEmail()"
+                />
+                <div class="error" id="errorEmail"></div>
+              </div>
+              <div>
+                <input
+                  id="passWord"
+                  class="inp"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onfocusout="validatePassword()"
+                />
+                <div class="error" id="errorPass"></div>
+              </div>
+            </div>
+
+            <div class="suthree">
+              <div class="bone">Have a referral code?</div>
+
+              <div class="btwo">
+                <div
+                  class="button"
+                  onclick="validateSubmit()"
+                  id="submitButton"
+                >
+                  Continue
+                </div>
+              </div>
+            </div>
+            <div class="bthree">
+              <div>
+                By creating an account, I accept the
+                <span class="tc">Terms & Conditions</span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    
+</body>
+</html>

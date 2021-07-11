@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script defer src="index.js"></script>
+</head>
+<body >
+
+    <d>
+        <p id="fname"></p>
+        <p id="lname"></p>
+        <p id="email"></p>
+        <p id="phone"></p>
+        <p id="dob"></p>
+    </d>
+
+    <script>
+
+        let formDetails = localStorage.getItem("formDetails")
+
+        let data = JSON.parse(formDetails)
+
+        console.log(data)
+
+        document.getElementById('fname').innerHTML = data.fname;
+        document.getElementById('lname').innerHTML = data.lname;
+        document.getElementById('email').innerHTML = data.email;
+        document.getElementById('phone').innerHTML = data.phone;
+        document.getElementById('dob').innerHTML = data.dob;
+
+    </script>
+    
+</body>
+
+</html>

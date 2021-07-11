@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location</title>
+    
+
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Google Maps JavaScript library -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCu0keI-HFl6-DUaEyTdqdTIsssYN6ky6k"></script>
+
+    <style>
+
+      .outterContainer{
+          width: 35%;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border: 1px solid black;
+          visibility: visible;
+      }
+      .icon{
+          margin-left: 20px;
+          margin-top: 30px;
+          right: 187px;
+          position: relative;
+      }
+      .searchInput{
+          margin-top: 20px;
+          width: 90%;
+          height: 40px;
+          transform: translateZ(0);
+          
+      }
+      .searchInput:hover{
+          box-sizing: inherit;
+
+      }
+      .gpsInput{
+          margin-top: 50px;
+          width: 82%;
+          height: 80px;
+          background-color: white;
+          border: 1px solid black;
+          margin-left: -32px;
+          display: flex;
+          flex-direction: row;
+
+      }
+      .gpsIcon{
+          flex: 1;
+          margin-left: 25px;
+          margin-top: 15px;
+          cursor: pointer;
+      }
+      .location{
+          flex: 1;
+          margin-right: 100px;
+          margin-top: 15px;
+          font-family: sans-serif;
+      }
+      .findMe{
+          width: 100px;
+          height: 50px;
+          border: none;
+          background-color: transparent;
+          margin-top: 10px;
+      }
+      /* .longitudeLatitude{
+          margin-top: 30px;
+          margin-right: 36px;
+          width: 83%;
+          height: 59px;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="outterContainer" id="closeLocation">
+      <div class="icon">
+        <button style="border: none;" onclick="closeSignup()"><i class="fa fa-times fa-2x" aria-hidden="true" clickable="true"></i></button>
+      </div>
+      <div class="searchInput">
+        <input
+          class="searchInput"
+          type="text"
+          placeholder="      Search for area,street name.."
+          id="search_input"
+        />
+      </div>
+      <div id="find-me" class="gpsInput">
+        <button  class="findMe"><i class="fa fa-map-marker fa-2x" aria-hidden="true" ></i></button>
+        <div class="location">
+          Get current location
+          <div class="gps">Using GPS</div>
+        </div>
+      </div>
+
+      <!-- <button class="longitudeLatitude" >Your location<br>
+                <a target="_blank" id="map-link"  ></a></button> -->
+    </div>
+  </body>
+  <script>
+
+    function closeSignup(){
+      var close = document.getElementById("closeLocation");
+      close.style.visibility = "hidden";
+    }
+
+    function geoFindMe() {
+      //const mapLink = document.querySelector("#map-link");
+
+      function success(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        console.log(latitude, longitude);
+      }
+
+      function error() {
+        console.log("error");
+      }
+
+      if (!navigator.geolocation) {
+        console.log("not supported");
+      } else {
+        navigator.geolocation.getCurrentPosition(success, error);
+      }
+    }
+    document.querySelector("#find-me").addEventListener("click", geoFindMe);
+
+
+ 
+var searchInput = 'search_input';
+ 
+$(document).ready(function () {
+ var autocomplete;
+ autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+  types: ['geocode'],
+  /*componentRestrictions: {
+   country: "USA"
+  }*/
+ });
+  
+ google.maps.event.addListener(autocomplete, 'place_changed', function () {
+  var near_place = autocomplete.getPlace();
+ });
+});
+
+
+  </script>
+</html>

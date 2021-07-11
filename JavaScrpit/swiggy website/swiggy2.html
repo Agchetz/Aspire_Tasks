@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlaceSwiggy</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+     <!-- Google Maps JavaScript library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCdGv5cjpA0dMUCSolCf89tl_vgccGvsu0"></script>
+     <!-- Google Maps JavaScript library -->
+    <script defer src="script.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+
+      body {
+        display: contents;
+      }
+      .Container {
+        width: 100%;
+        height: auto;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        flex: 1;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        position: fixed;
+      }
+      .logo {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .swiggyLogo {
+        width: 150px;
+        height: 40px;
+        margin-left: 20px;
+      }
+      .information {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+      }
+      .info {
+        flex: 1;
+        margin-left: 100px;
+        font-family: sans-serif;
+        font-weight: 5px;
+        text-decoration: none;
+        color: black;
+      }
+      .afterHeader {
+        width: 100%;
+        height: 280px;
+        background-color: #494d60;
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+      }
+      .greatText {
+        flex: 1;
+        display: flex;
+        font-family: sans-serif;
+        color: white;
+        margin-left: 20px;
+        margin-top: 75px;
+      }
+      .taglineText {
+        flex: 1;
+        display: flex;
+        font-family: sans-serif;
+        color: white;
+        margin-left: 20px;
+      }
+      .inputdiv {
+        flex: 1;
+        display: flex;
+        margin-left: 20px;
+        text-decoration: none;
+        color: black;
+      }
+      .input {
+        width: 300px;
+        height: 40px;
+        background-color: white;
+        border: 0px;
+        font-family: sans-serif;
+        margin-bottom: 30px;
+        text-decoration: none;
+        color: black;
+      }
+      .foodButton {
+        width: 100px;
+        height: 42px;
+        color: white;
+        background-color: rgb(255, 174, 0);
+        border: 0px;
+        font-family: sans-serif;
+        text-decoration: none;
+        color: white
+      }
+      .footer {
+        width: 100%;
+        height: 45px;
+        background-color: rgb(226, 224, 224);
+        font-size: x-small;
+        font-family: sans-serif;
+      }
+      .footerHome {
+        color: rgb(109, 92, 92);
+      }
+      .para {
+        margin-left: 20px;
+      }
+      .about {
+        width: 100%;
+        height: 100vh;
+        background-color: thistle;
+      }
+      .aboutSection {
+        width: 100%;
+        height: 250px;
+        background-color: aquamarine;
+      }
+      .aboutPlace {
+        font-size: 30px;
+        font-family: sans-serif;
+        margin-left: 20px;
+        margin-top: 60px;
+      }
+      .placeDescrip {
+        color: rgb(100, 100, 100);
+        font-family: sans-serif;
+        margin-left: 20px;
+        font-size: 20px;
+      }
+      .photos {
+        width: 100%;
+        height: 150vh;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .picAbout {
+        font-size: 30px;
+        font-family: sans-serif;
+        height: 50px;
+        margin-left: 25px;
+      }
+      .firstRowContainer {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+      }
+      .firstRow1 {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        left: 10px;
+        top: 10px;
+        bottom: 20px;
+      }
+      .firstRow2 {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        top: 10px;
+        bottom: 20px;
+      }
+      .firstRow3 {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        right: 10px;
+        bottom: 20px;
+        top: 10px;
+      }
+      .pics {
+        width: 90%;
+        height: 350px;
+      }
+
+      .OnImageText {
+        font-family: sans-serif;
+        margin-top: 275px;
+        color: white;
+        position: absolute;
+        font-size: 30px;
+      }
+      .outerCard {
+        height: 370px;
+        width: 90%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .imageContainer {
+        flex: 1;
+        background-color: rgb(255, 255, 255);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .image {
+        background-image: url("https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qtzcl3ckbms1mbglohrw");
+        height: 80%;
+        width: 80%;
+        background-size: 100% 100%;
+      }
+      .textContainer {
+        flex: 1;
+        background-color: rgb(255, 255, 255);
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      .tags {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .outerCard:hover {
+        border: 1px solid black;
+      }
+      .button {
+        visibility: hidden;
+        border: none;
+        background-color: white;
+      }
+      .button:hover{
+        color: tomato;
+      }
+      .outerClass {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+      }
+
+      .lastFooter {
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(0, 0, 0);
+        width: 100%;
+        height: 100px;
+        margin-top: 20px;
+      }
+      .f2{
+        background-color: black;
+        color: white;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+      .f1{
+        background-color: black;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        display: flex;        
+      }
+      .f3{
+        background-color: black;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+      .fa-facebook,.fa-instagram,.fa-pinterest,.fa-twitter{
+        margin: 0px 10px;
+        color: white;
+        transition: transform .2s;
+      }
+      .fa-facebook:hover{
+        transform: scale(0.7);
+      }
+      .fa-instagram:hover{
+        transform: scale(0.7);
+      }
+      .fa-pinterest:hover{
+        transform: scale(0.7);
+      }
+      .fa-twitter:hover{
+        transform: scale(0.7);
+      }
+      .firstRowCard{
+        display: grid;
+        grid-template-columns:  auto auto auto auto; 
+      }
+      .line{
+        width: 90%;
+      }
+
+
+
+      .outterContainer{
+          position: absolute;
+          width: 40%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          visibility: hidden;
+          background-color: white;
+      }
+      .icon{
+          margin-left: 20px;
+          margin-top: 30px;
+          right: 187px;
+          
+      }
+      .searchInput{
+          margin-top: 20px;
+          margin-left: 20px;
+          width: 90%;
+          height: 40px;
+          transform: translateZ(0);
+          
+      }
+      .searchInput:hover{
+          box-sizing: inherit;
+
+      }
+      .gpsInput{
+          margin-top: 50px;
+          left: 71px;
+          width: 82%;
+          height: 80px; cursor: pointer;
+          background-color: white;
+          border: 1px solid black;
+          margin-left: -32px;
+          display: flex;
+          flex-direction: row;
+          position: relative;
+      }
+      .gpsIcon{
+          flex: 1;
+          margin-left: 25px;
+          margin-top: 15px;
+          cursor: pointer;
+      }
+      .location{
+          flex: 1;
+          margin-right: 100px;
+          margin-top: 15px;
+          font-family: sans-serif;
+      }
+      .findMe{
+          width: 100px;
+          height: 50px;
+          border: none;
+          background-color: transparent;
+          margin-top: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="Container">
+      <header>
+        <div class="header" id="myHeader">
+          <div class="logo">
+            <img src="sl2.png" class="swiggyLogo" />
+          </div>
+          <div class="information">
+            <a href="https://www.swiggy.com/support"><div class="info"><i class="fa fa-info" aria-hidden="true"></i>    Help</div></a>
+            <a ><div class="info" onclick="openSignupform()"><i class="fa fa-user" aria-hidden="true" clickable="true"></i>    Sign In</div></a>
+            <a href="https://www.swiggy.com/checkout"><div class="info"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>   Cart</div></a>
+          </div>
+        </div>
+      </header>
+      <div class="afterHeader">
+        <div class="greatText">
+          <h1>Great restaurants in Bengaluru, delivering to you</h1>
+        </div>
+        <div class="taglineText">
+          <p>Set exact location to find the right restaurants near you.</p>
+        </div>
+        <div class="inputdiv" style="text-decoration: none;">
+          <input
+            class="input"
+            placeholder="Enter street name, area etc..."
+            type="text"
+            onclick="openLocationTab()"
+          />
+          <button class="foodButton" onclick="openLocationTab()">Find Food</button>
+        </div>
+      </div>
+      <div class="footer">
+        <p class="para"><span class="footerHome">Home /</span> Bengaluru</p>
+      </div>
+
+
+
+      <div class="outterContainer" id="closeLocationIcon">
+        <div class="icon">
+          <button style="border: none;" onclick="closeLocation()"><i class="fa fa-times fa-2x" aria-hidden="true" clickable="true"></i></button>
+        </div>
+        <div class="searchInput">
+          <input
+            class="searchInput"
+            type="text"
+            placeholder="      Search for area,street name.."
+            id="search_input"
+          />
+        </div>
+        <div id="find-me" class="gpsInput">
+          <button  class="findMe"><i class="fa fa-map-marker fa-2x" aria-hidden="true" ></i></button>
+          <div class="location">
+            Get current location
+            <div class="gps">Using GPS</div>
+          </div>
+        </div>
+        </div>
+
+
+      <section class="aboutSection">
+        <h1 class="aboutPlace">About the food culture in Bengaluru</h1>
+        <p class="placeDescrip">
+          Order food & beverages online from restaurants near & around you. We
+          deliver food from your neighborhood local joints, your favorite cafes,
+          luxurious & elite restaurants in your area. Exciting bit? We place no
+          minimum order restrictions! Order in as little (or as much) as you?d
+          like. We?ll Swiggy it to you!
+        </p>
+      </section>
+
+      <div class="photos">
+        <h1 class="picAbout">Our picks for you</h1>
+        <div class="firstRowContainer">
+          <div class="firstRow1">
+            <img src="first.jpg" class="pics" alt="Offers for you" />
+            <div class="OnImageText">Offers for you</div>
+          </div>
+          <div class="firstRow2">
+            <img src="two.jpg" class="pics" alt="Top Rated" />
+            <div class="OnImageText">Top Rated</div>
+          </div>
+          <div class="firstRow3">
+            <img src="three.jpg" class="pics" alt="Super Fast Delivery" />
+            <div class="OnImageText">Super Fast Delivery</div>
+          </div>
+        </div>
+        <div class="firstRowContainer">
+          <div class="firstRow1">
+            <img src="first.jpg" class="pics" alt="Offers for you" />
+            <div class="OnImageText">Offers for you</div>
+          </div>
+          <div class="firstRow2">
+            <img src="two.jpg" class="pics" alt="Top Rated" />
+            <div class="OnImageText">Top Rated</div>
+          </div>
+          <div class="firstRow3">
+            <img src="three.jpg" class="pics" alt="Super Fast Delivery" />
+            <div class="OnImageText">Super Fast Delivery</div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="picAbout">Popular restaurants in and around Bengaluru</h2>
+
+      <section class="outerClass">
+        <!-- section1 -->
+        <div
+            class="outerCard"
+            onmouseover="callButton()"
+            onmouseout="removeButton()"
+        >
+            <div class="imageContainer">
+                <div class="image">
+                  
+                </div>
+            </div>
+            <div class="textContainer">
+                <div class="heading">Nandhana Place</div>
+                <div class="text">Briyani</div>
+
+                <div class="tags">
+                    <div>tag</div>
+                    <div>25mins</div>
+                    <div>Rs 500</div>
+                </div>
+                <hr class="line"/>
+                <div>Use 25% OFF | Use TryNew</div>
+                <hr class="line"/>
+                <button id="button" class="button">Quick View</button>
+            </div>
+        </div>
+        <!-- section1 -->
+        <!-- section2 -->
+        <div
+            class="outerCard"
+            onmouseover="callButton1()"
+            onmouseout="removeButton1()"
+        >
+            <div class="imageContainer">
+                <div class="image"></div>
+            </div>
+            <div class="textContainer">
+                <div class="heading">Nandhana Place</div>
+                <div class="text">Briyani</div>
+                <div class="tags">
+                    <div>tag</div>
+                    <div>25mins</div>
+                    <div>Rs 500</div>
+                </div>
+                <hr class="line"/>
+                <div>Use 25% OFF | Use TryNew</div>
+                <hr class="line"/>
+                <button id="button1" class="button">Quick View</button>
+            </div>
+        </div>
+        <!-- section2 -->
+        <!-- section3 -->
+        <div
+            class="outerCard"
+            onmouseover="callButton2()"
+            onmouseout="removeButton2()"
+        >
+            <div class="imageContainer">
+                <div class="image"></div>
+            </div>
+            <div class="textContainer">
+                <div class="heading">Nandhana Place</div>
+                <div class="text">Briyani</div>
+                <div class="tags">
+                    <div>tag</div>
+                    <div>25mins</div>
+                    <div>Rs 500</div>
+                </div>
+                <hr class="line"/>
+                <div>Use 25% OFF | Use TryNew</div>
+                <hr class="line"/>
+                <button id="button2" class="button">Quick View</button>
+            </div>
+        </div>
+        <!-- section3 -->
+        <!-- section4 -->
+        <div
+            class="outerCard"
+            onmouseover="callButton3()"
+            onmouseout="removeButton3()"
+        >
+            <div class="imageContainer">
+                <div class="image"></div>
+            </div>
+            <div class="textContainer">
+                <div class="heading">Nandhana Place</div>
+                <div class="text">Briyani</div>
+                <div class="tags">
+                    <div>tag</div>
+                    <div>25mins</div>
+                    <div>Rs 500</div>
+                </div>
+                <hr class="line"/>
+                <div>Use 25% OFF | Use TryNew</div>
+                <hr class="line"/>
+                <button id="button3" class="button">Quick View</button>
+            </div>
+        </div>
+        <!-- section4 -->
+        <!-- section5 -->
+        <div
+            class="outerCard"
+            onmouseover="callButton4()"
+            onmouseout="removeButton4()"
+        >
+            <div class="imageContainer">
+                <div class="image"></div>
+            </div>
+            <div class="textContainer">
+                <div class="heading">Nandhana Place</div>
+                <div class="text">Briyani</div>
+                <div class="tags">
+                    <div>tag</div>
+                    <div>25mins</div>
+                    <div>Rs 500</div>
+                </div>
+                <hr class="line"/>
+                <div>Use 25% OFF | Use TryNew</div>
+                <hr class="line"/>
+                <button id="button4" class="button">Quick View</button>
+            </div>
+        </div>
+        <!-- section5 -->
+        <!-- section6 -->
+        <div
+            class="outerCard"
+            onmouseover="callButton5()"
+            onmouseout="removeButton5()"
+        >
+            <div class="imageContainer">
+                <div class="image"></div>
+            </div>
+            <div class="textContainer">
+                <div class="heading">Nandhana Place</div>
+                <div class="text">Briyani</div>
+                <div class="tags">
+                    <div>tag</div>
+                    <div>25mins</div>
+                    <div>Rs 500</div>
+                </div>
+                <hr class="line"/>
+                <div>Use 25% OFF | Use TryNew</div>
+                <hr class="line"/>
+                <button id="button5" class="button">Quick View</button>
+            </div>
+        </div>
+        <!-- section6 -->
+        <!-- section7 -->
+        <div
+            class="outerCard"
+            onmouseover="callButton6()"
+            onmouseout="removeButton6()"
+        >
+            <div class="imageContainer">
+                <div class="image"></div>
+            </div>
+            <div class="textContainer">
+                <div class="heading">Nandhana Place</div>
+                <div class="text">Briyani</div>
+                <div class="tags">
+                    <div>tag</div>
+                    <div>25mins</div>
+                    <div>Rs 500</div>
+                </div>
+                <hr class="line"/>
+                <div>Use 25% OFF | Use TryNew</div>
+                <hr class="line"/>
+                <button id="button6" class="button">Quick View</button>
+            </div>
+        </div>
+        <!-- section7 -->
+        <!-- section8 -->
+        <div
+            class="outerCard"
+            onmouseover="callButton7()"
+            onmouseout="removeButton7()"
+        >
+            <div class="imageContainer">
+                <div class="image"></div>
+            </div>
+            <div class="textContainer">
+                <div class="heading">Nandhana Place</div>
+                <div class="text">Briyani</div>
+                <div class="tags">
+                    <div>tag</div>
+                    <div>25mins</div>
+                    <div>Rs 500</div>
+                </div>
+                <hr class="line"/>
+                <div>Use 25% OFF | Use TryNew</div>
+                <hr class="line"/>
+                <button id="button7" class="button">Quick View</button>
+            </div>
+        </div>
+        <!-- section8 -->
+    </section>
+</body>
+<script src="Demo.js"></script>
+</html>
+    
+      <div class="lastFooter">
+        <div
+          class="f1"
+        >
+          <img
+            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_284/Logo_f5xzza"
+            width="60%"
+          />
+        </div>
+        <div class="f2">© 2021 Swiggy</div>
+        <div class="f3">
+          <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+          <i class="fa fa-pinterest fa-2x" aria-hidden="true"></i>
+          <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+          <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+        </div>
+      </div>
+
+
+    </div>
+  </body>
+</html>

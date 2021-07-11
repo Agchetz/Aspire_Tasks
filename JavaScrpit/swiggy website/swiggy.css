@@ -1,0 +1,503 @@
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    display: flex;
+    flex-direction: row;
+    height: 85vh;
+  }
+  .form {
+    background-color: rgb(255, 255, 255);
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+  }
+  .image {
+    flex: 1;
+  }
+  .hp1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+    flex: 1.3;
+    align-items: center;
+  }
+  .losi {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .hplogin {
+    background-color: rgb(255, 255, 255);
+    border: 0px;
+    font-weight: 800;
+    height: 40px;
+    width: 100px;
+  }
+  .hplogin:hover {
+    background-color: rgb(255, 255, 255);
+    color: orange;
+    font-weight: 900;
+    border: 0px;
+    height: 40px;
+    width: 100px;
+  }
+  .hpsignup {
+    background-color: rgb(0, 0, 0);
+    border: 0px;
+    height: 40px;
+    width: 100px;
+    color: white;
+  }
+  .hp2 {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    flex: 4;
+    padding-left: 7.5%;
+    padding-right: 15%;
+  }
+  .hpinput1 {
+    flex: 4;
+    padding: 5px;
+    border-color: rgb(0, 0, 0);
+    height: 45px;
+    opacity: 0.8;
+    font-family: sans-serif;
+    font-size: 16px;
+  }
+  .hpinput2 {
+    flex: 2;
+    border: 0px;
+    background-color: rgb(255, 123, 0);
+    height: 59px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: white;
+  }
+  .OrderSteps {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: sans-serif;
+  }
+  .OrderContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+  }
+  .OrderWrapper {
+    background-color: #250e05;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+  }
+  .OrderFood {
+    font-family: sans-serif;
+    opacity: 0.5;
+    margin-top: -10px;
+  }
+  .Search{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    width: 100%;
+  }
+  .serachBox{
+    display: flex;
+    border: 2px solid black;
+    width: fit-content;
+    width: 80%;
+  }
+  .searchText{
+    border: none;
+    width: 75%;
+    outline: none;
+    text-align: center;
+    font-size: large;
+  }
+  .RestaurantsContainer {
+    background-color: #ffffff;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .RestaurantsInnerContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .googlePlay{
+    width: 175px; height: 50px;
+    transition: transform .2s;
+  }
+  .googlePlay:hover{
+      transform: scale(0.9);
+  }
+  .appleStore{
+    width: 175px; height: 50px;
+    margin-left: 5px;
+    transition: transform .2s;
+  }
+  .appleStore:hover{
+    transform: scale(0.9);
+}
+  .RestaurantsHeader {
+    text-align: left;
+    width: 50%;
+    margin-top: 25%;
+    margin-left: -26%;
+    font-family: sans-serif;
+    color: #282c3f;
+  }
+  .RestaurantsPara {
+    text-align: left;
+    width: 60%;
+    margin-left: -16%;
+    margin-top: -10px;
+    font-family: sans-serif;
+    color: #282c3f;
+    opacity: 0.7;
+  }
+  .RestaurantsImageContainer {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin-left: -18%;
+    margin-top: 20px;
+  }
+  .app-store {
+    width: 200px;
+    height: 70px;
+    margin-top: 30px;
+    transition: transform .2s;
+  }
+  .app-store:hover {
+  transform: scale(0.9); 
+
+  }
+  .google-play {
+    width: 200px;
+    height: 70px;
+    transition: transform .2s;
+  }
+  .google-play:hover {
+    transform: scale(0.9); 
+  }
+  .FontAndMargin {
+    font-family: sans-serif;
+    margin-top: 0px;
+  }
+  .CommonFont {
+    font-family: sans-serif;
+  }
+  .FontAndOpacity {
+    opacity: 0.7;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: black;
+  }
+  .DeliveryPlaceContainer {
+    background-color: black;
+    width: 100%;
+    height: 375px;
+  }
+  .DeliveryPlaceInnerContainer {
+    width: 90%;
+  }
+  .DeliveryPlaceAlignCenter {
+    display: flex;
+    flex-direction: row;
+    height: 450px;
+  }
+  .DeliveryPlace1 {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 30px;
+    justify-content: flex-start;
+    margin-left: 5%;
+  }
+  .DeliveryPlace2 {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 81px;
+    justify-content: flex-start;
+    margin-left: 13%;
+  }
+  .DeliveryPlace3 {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 81px;
+    justify-content: flex-start;
+    margin-left: 19%;
+  }
+  .DeliveryPlace4 {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 81px;
+    justify-content: flex-start;
+    margin-left: 18%;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100px;
+  }
+  footer {
+    background-color: rgb(168, 115, 115);
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .outtercontainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 40%;
+    height: 110%;
+    right: 0px;
+    background-color: #ffffff;
+    visibility: hidden;
+  }
+ 
+  .contain {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100vh;
+    margin-left: 20px;
+    display: hidden;
+  }
+  .suone {
+    flex: 1;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .sua {
+    flex: 1;
+    font-family: sans-serif;
+  }
+  .loginacc {
+    color: orange;
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+  .sub {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin-left: 100px;
+
+  }
+  .sutwo {
+    flex: 3;
+    width: 100%;
+    border-color: rgb(175, 29, 29);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 30px;
+    font-family: sans-serif;
+  }
+  .inp {
+    width: 225%;
+    height: 60px;
+  }
+  .suthree {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .bone {
+    flex: 1;
+    font-family: sans-serif;
+    cursor: pointer;
+    color: cornflowerblue;
+  }
+  .btwo {
+    flex: 1;
+    display: flex;
+    font-family: sans-serif;
+  }
+  .two20{ 
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 65px;
+    justify-content: flex-start;
+    margin-left: 20%;
+          
+  }
+  .button {
+    width: 100%;
+    height: 50px;
+    background-color: orange;
+    border: none;t
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    justify-content: center;
+    align-content: center;
+    display: inline-grid;
+  }
+  .bthree {
+    flex: 1;
+    font-family: sans-serif;
+    font-size: smaller;
+  }
+  .tc {
+    color: cornflowerblue;
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+  .t
+  .locate-me-button{
+   background-color: rgb(255, 255, 255);
+   margin:10px;
+  }
+  .locate-me-button:hover {
+    background-color: rgb(177, 177, 177);
+    color: white;
+    margin:10px;  
+  }
+  
+  .two40{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 65px;
+    justify-content: flex-start;
+    margin-left: 20%;
+  }
+  .headercity{
+    opacity: 0.5;
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-top: 33px;
+  }
+  .Logincontainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 35%;
+    height: 100vh;
+    background-color: #ffffff;
+    visibility: hidden;
+  }
+  .buttonLogin{
+    width: 116%;
+    height: 50px;
+    background-color: orange;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .close{
+    border: 0px;
+    background-color: white;
+  }
+  .logoo {
+    width: 80px;
+    height: 80px;
+    padding-right: 75px;
+    position: absolute;
+    right: 0px;
+  }
+  .f2{
+    background-color: black;
+    color: white;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  f1{
+    background-color: black;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+          
+  }
+  .f3{
+    
+    background-color: black;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .fa-facebook,.fa-instagram,.fa-pinterest,.fa-twitter{
+    margin: 0px 10px;
+    color: white;
+    transition: transform .2s;
+  }
+  .fa-facebook:hover{
+    transform: scale(0.7);
+  }
+  .fa-instagram:hover{
+    transform: scale(0.7);
+  }
+  .fa-pinterest:hover{
+    transform: scale(0.7);
+  }
+  .fa-twitter:hover{
+    transform: scale(0.7);
+  }
+  .error{
+    font-size: small;
+    color: red;
+  }
+ 
+
+
+  .Frame {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    right: 0px;
+    border: none;
+    scrollbar-width: none;
+    overflow: auto;
+     visibility: hidden; 
+}
+.Frame::-webkit-scrollbar {
+    display: none;
+}
