@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::-webkit-input-placeholder {
+       color: white;
+    }
+
+    input:required {
+        color:#red !important;
+        box-shadow: none;
+    }
+
+    input:valid {
+        color:#fff !important;
+        box-shadow: none;
+    }
+
+    textarea:required {
+        color:#red !important;
+        box-shadow: none;
+    }
+
+    textarea:valid {
+        color:#fff !important;
+        box-shadow: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="form-group">
+        <input type="text" required="required" class="control-label text-fields" placeholder="Name"  />
+    </div>
+    <div class="form-group">
+        <input type="number" required="required" class="control-label text-fields" placeholder="Phone" />
+    </div>
+    <div class="form-group">
+        <textarea class="control-label field" type="text" rows="2" placeholder="Address" required></textarea>
+    </div>
+    <div class="form-group">
+        <textarea class="control-label field" type="text" rows="1" placeholder="Comments" required></textarea>
+    </div>
+</body>
+</html>

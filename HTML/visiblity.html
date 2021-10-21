@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .openContainer {
+                flex: 1;
+                background-color: aqua;
+                width: 50%;
+                height: 100vh;
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body style="background-color: violet; display: flex; flex-direction: row">
+        <div style="flex: 1">
+            <button onclick="openDiv()">click me</button>
+        </div>
+        <div id="color" class="openContainer">
+            <button onclick="closeDiv()">click me</button>
+        </div>
+    </body>
+    <script>
+        function openDiv() {
+            var a = document.getElementById("color");
+            a.style.visibility = "visible";
+        }
+        function closeDiv() {
+            var a = document.getElementById("color");
+            a.style.visibility = "hidden";
+        }
+    </script>
+</html>
